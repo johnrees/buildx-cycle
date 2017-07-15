@@ -16,7 +16,7 @@ export function App (sources) {
   const vtree$ = xs.combine(width$, height$)
     .map( ([width, height]) =>
       div([
-        h('a-scene', [
+        h('a-scene', {attrs:{ stats: true }}, [
           h('a-box', {
             attrs: {
               position: `0 0 -10`,
@@ -24,11 +24,12 @@ export function App (sources) {
               height: height,
               color: 'red'
             }
-          }),
-          h('a-sky', { attrs: {color: '#ECECEC'} })
+          })
         ]),
-        input({attrs: { id: 'width', value: width, type: 'range', min: 1, max: 4, step: 0.1, style: 'z-index: 10; position: absolute; bottom: 30px; right: 10px;' }}),
-        input({attrs: { id: 'height', value: height, type: 'range', min: 1, max: 4, step: 0.1, style: 'z-index: 10; position: absolute; bottom: 10px; right: 10px;' }})
+        div({attrs: { id: 'controls'}}, [
+          input({attrs: { id: 'width', value: width, type: 'range', min: 1, max: 4, step: 0.1 }}),
+          input({attrs: { id: 'height', value: height, type: 'range', min: 1, max: 4, step: 0.1 }})
+        ])
       ])
     )
 

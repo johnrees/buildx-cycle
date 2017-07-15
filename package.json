@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "cycle-scripts": "1.1.0"
+    "cycle-scripts": "1.1.0",
+    "ghpages": "^0.0.10"
   },
   "dependencies": {
     "@cycle/dom": "^17.6.0",
@@ -15,7 +16,8 @@
     "start": "cycle-scripts start",
     "test": "cycle-scripts test",
     "build": "cycle-scripts build",
-    "eject": "cycle-scripts eject"
+    "eject": "cycle-scripts eject",
+    "deploy": "npm run build && gh-pages -d build && rm -rf build"
   },
   "babel": {
     "presets": [
