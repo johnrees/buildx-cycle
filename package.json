@@ -9,6 +9,9 @@
   "dependencies": {
     "@cycle/dom": "^17.6.0",
     "@cycle/run": "^3.1.0",
+    "aframe-extrude-svg-component": "^0.0.3",
+    "clipper-js": "^1.0.2",
+    "ramda": "^0.24.1",
     "xstream": "^10.9.0"
   },
   "scripts": {
@@ -16,7 +19,7 @@
     "test": "cycle-scripts test",
     "build": "cycle-scripts build",
     "eject": "cycle-scripts eject",
-    "deploy": "npm run build && gh-pages -d build && rm -rf build && rm public/bundle.js"
+    "deploy": "npm run build && echo 'https://cycle.buildx.cc' > build/CNAME && gh-pages -d build && rm -rf build"
   },
   "babel": {
     "presets": [
