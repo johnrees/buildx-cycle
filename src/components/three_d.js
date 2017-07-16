@@ -1,18 +1,11 @@
 import {h, div, input, span} from '@cycle/dom'
 import xs from 'xstream'
 
-import { rails, bays, floor, frames, walls, connectors } from './parts'
+import { rails, bays, floor, frames, walls, connectors } from '../parts'
+import {floorArea} from '../extras/functions'
+import config from '../extras/config'
 
-const floorArea = (width, length) => width*length
-
-const config = {
-  width: 1.5,
-  height: 3,
-  wallHeight: 2,
-  length: 10
-}
-
-export function App(sources) {
+export default function ThreeD(sources) {
 
   const width$ = sources.DOM.select('input#width')
     .events('input')

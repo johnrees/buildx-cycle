@@ -1,8 +1,8 @@
 import {run} from '@cycle/run'
 import {makeDOMDriver} from '@cycle/dom'
-import {App} from './app'
-// import run from '@cycle/most-run'
-// import 'aframe'
+
+// import App from './components/three_d'
+import App from './components/svg'
 
 const main = App
 
