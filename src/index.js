@@ -1,10 +1,10 @@
 import {run} from '@cycle/run'
 import {makeDOMDriver} from '@cycle/dom'
 
-// import App from './components/three_d'
-import App from './components/svg'
+import SVG from './components/svg'
+import ThreeD from './components/three_d'
 
-const main = App
+const main = (window.location.hash === '#svg') ? SVG : ThreeD
 
 const drivers = {
   DOM: makeDOMDriver('#app')
