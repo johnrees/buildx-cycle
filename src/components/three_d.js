@@ -27,7 +27,8 @@ export default function ThreeD(sources) {
   const vtree$ = model(sources)
     .map(([width, height, wallHeight, length]) =>
       div([
-        h('a-scene', {attrs:{stats: true}}, [
+        h('a-scene', {attrs: {stats: true}}, [
+
           h('a-entity', {attrs: {id: 'frames', position: '-2.4 6 -10', rotation: '180 0 0'}}, [
             h('a-entity', {attrs: {id: 'frame', position: '0 0 0'}}, [
               piece('M2.4133,0 2.8713,0.3539 2.75,0.5129 2.4133,0.26 0.1213,2.0060 0,1.8470z', 'yellow'),
@@ -42,7 +43,9 @@ export default function ThreeD(sources) {
             h('a-entity', {attrs: { clone: {id: '#frame'}, position: '0 0 -1'}}),
             h('a-entity', {attrs: { clone: {id: '#frame'}, position: '0 0 -2'}}),
             h('a-entity', {attrs: { clone: {id: '#frame'}, position: '0 0 -3'}})
-          ])
+          ]),
+
+          h('a-entity', {attrs: {geometry:{primitive: 'plane', width: 20, height: 20}, material: {color: '#CCC', side: 'double'}, position: '0 -0.01 -10', rotation: '-90 0 0' }})
         ]),
         ...renderControls(width, height, wallHeight, length)
       ])
@@ -62,4 +65,14 @@ export default function ThreeD(sources) {
     <a-entity clone={{id: '#frame'}} position="0 0 1" />
   </a-entity>
 </a-scene>
+*/
+
+/*
+scene(attrs({stats: true}),[
+  entity('#frames', attrs({position: '-2 6 10', rotation: '180 0 0'}), [
+    entity('#frame', attrs({position: '0 0 0'}), [
+      piece()
+    ])
+  ])
+])
 */
