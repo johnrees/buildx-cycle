@@ -57,8 +57,8 @@ export function App(sources) {
             span(`wallHeight: ${wallHeight}m`)
           ]),
           div([
-            input({attrs: { id: 'length', value: length, type: 'range', min: 5, max: 15, step: 0.5 }}),
-            span(`Depth: ${length}m`)
+            input({attrs: { id: 'length', value: length, type: 'range', min: 5, max: 15, step: 1 }}),
+            span(`Bays: ${length}`)
           ]),
         ]),
         div({attrs: { id: 'figures'}}, [
